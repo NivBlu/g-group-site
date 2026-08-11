@@ -43,7 +43,7 @@
 .no {
   font-family: var(--accent-face);
   font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.06em;
   color: var(--brass);
 }
 

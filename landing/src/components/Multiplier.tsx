@@ -6,11 +6,6 @@ import { SectionHead } from './ui/SectionHead'
 import s from './Multiplier.module.css'
 
 const FLOORS = DEAL.far // 14
-const FLOOR_H = 9
-const GAP = 2.4
-const PLOT_Y = 210
-const PLOT_W = 92
-const PLOT_X = 96
 
 const STEPS = [
   {
@@ -56,112 +51,65 @@ const STEPS = [
 ]
 
 /**
- * A measured section drawing: one square of land at grade, fourteen slabs
- * stacked above it, and a dimension line running the full height.
- * Drawn rather than decorated — the point is the ratio, so the ratio is
- * what the geometry encodes.
+ * A measured section: one square of land at grade, fourteen slabs stacked
+ * above it, and a dimension bracket spanning the built height.
+ *
+ * Built from HTML rather than SVG on purpose. Hebrew inside <text> reverses
+ * on some mobile browsers once the SVG carries its own direction, and
+ * whileInView on SVG children never fires on iOS because IntersectionObserver
+ * does not observe them — which left the stack invisible. Both problems
+ * disappear when the diagram is ordinary elements.
  */
 function SectionDrawing() {
   const reduced = usePrefersReducedMotion()
-  const stackH = FLOORS * FLOOR_H + (FLOORS - 1) * GAP
-  const topY = PLOT_Y - 26 - stackH
 
   return (
-    <svg
-      className={s.drawing}
-      viewBox="0 0 300 240"
-      role="img"
+    <motion.figure
+      className={s.section2d}
+      initial={reduced ? false : 'hidden'}
+      whileInView="shown"
+      viewport={{ once: true, amount: 0.35 }}
       aria-label={`מטר קרקע אחד מול ${FLOORS} מטרים בנויים — יחס רח״ק של ${FLOORS}`}
     >
-      {/* ground line */}
-      <line className={s.hair} x1="14" y1={PLOT_Y} x2="286" y2={PLOT_Y} />
-      {[...Array(11)].map((_, i) => (
-        <line
-          key={i}
-          className={s.hairSoft}
-          x1={18 + i * 25}
-          y1={PLOT_Y}
-          x2={12 + i * 25}
-          y2={PLOT_Y + 7}
-        />
-      ))}
+      <div className={s.column}>
+        <div className={s.stackWrap}>
+          <div className={s.bracket} aria-hidden="true">
+            <span className={s.bracketLabel}>{FLOORS} מ״ר בנויים</span>
+            <span className={s.bracketLine} />
+          </div>
 
-      {/* the land unit, at grade */}
-      <rect
-        className={s.ground}
-        x={PLOT_X}
-        y={PLOT_Y - 12}
-        width={PLOT_W}
-        height={12}
-      />
-      <rect
-        className={s.hair}
-        x={PLOT_X}
-        y={PLOT_Y - 12}
-        width={PLOT_W}
-        height={12}
-      />
-      <text className={s.labelStrong} x={PLOT_X + PLOT_W / 2} y={PLOT_Y + 20} textAnchor="middle">
-        1 מ״ר קרקע
-      </text>
+          <div className={s.stack}>
+            {Array.from({ length: FLOORS }, (_, i) => (
+              <motion.span
+                key={i}
+                className={i === 0 ? `${s.slab} ${s.slabTop}` : s.slab}
+                variants={{
+                  hidden: { scaleX: 0, opacity: 0 },
+                  shown: {
+                    scaleX: 1,
+                    opacity: 1,
+                    transition: {
+                      duration: 0.45,
+                      ease: [0.16, 1, 0.3, 1],
+                      delay: 0.2 + (FLOORS - 1 - i) * 0.06,
+                    },
+                  },
+                }}
+              />
+            ))}
+          </div>
 
-      {/* the slabs */}
-      {[...Array(FLOORS)].map((_, i) => {
-        const y = PLOT_Y - 26 - (i + 1) * FLOOR_H - i * GAP
-        return (
-          <motion.rect
-            key={i}
-            className={i === FLOORS - 1 ? s.slabTop : s.slab}
-            x={PLOT_X}
-            y={y}
-            width={PLOT_W}
-            height={FLOOR_H}
-            initial={reduced ? false : { scaleX: 0, opacity: 0 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{
-              duration: 0.5,
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.25 + i * 0.075,
-            }}
-            style={{ transformOrigin: `${PLOT_X + PLOT_W / 2}px ${y + FLOOR_H / 2}px` }}
-          />
-        )
-      })}
+          <p className={s.ceilingNote}>ללא מגבלת קומות</p>
+        </div>
 
-      {/* dimension line for the built height */}
-      <motion.g
-        initial={reduced ? false : { opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.4 }}
-        transition={{ duration: 0.7, delay: 1.35 }}
-      >
-        <line className={s.dim} x1={PLOT_X - 22} y1={topY} x2={PLOT_X - 22} y2={PLOT_Y - 26} />
-        <line className={s.dim} x1={PLOT_X - 27} y1={topY} x2={PLOT_X - 17} y2={topY} />
-        <line
-          className={s.dim}
-          x1={PLOT_X - 27}
-          y1={PLOT_Y - 26}
-          x2={PLOT_X - 17}
-          y2={PLOT_Y - 26}
-        />
-        <text
-          className={s.labelBrass}
-          x={PLOT_X - 32}
-          y={topY + stackH / 2}
-          textAnchor="end"
-          dominantBaseline="middle"
-        >
-          {FLOORS} מ״ר בנויים
-        </text>
-      </motion.g>
+        <div className={s.plot}>
+          <span className={s.plotFace} />
+        </div>
+      </div>
 
-      {/* leader to the top slab */}
-      <line className={s.hairSoft} x1={PLOT_X + PLOT_W} y1={topY + 4} x2={PLOT_X + PLOT_W + 34} y2={topY + 4} />
-      <text className={s.label} x={PLOT_X + PLOT_W + 38} y={topY + 6.5}>
-        ללא מגבלת קומות
-      </text>
-    </svg>
+      <div className={s.grade} aria-hidden="true" />
+      <p className={s.plotLabel}>1 מ״ר קרקע</p>
+    </motion.figure>
   )
 }
 
