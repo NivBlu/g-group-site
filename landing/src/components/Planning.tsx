@@ -56,7 +56,7 @@ export function Planning() {
     <section className={s.section} id="planning">
       <div className={s.wrap}>
         <SectionHead
-          index="05"
+          index="06"
           label="סטטוס תכנוני"
           split
           title={<>איפה התכנית עומדת היום — בלי ערפול.</>}

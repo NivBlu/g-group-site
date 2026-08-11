@@ -97,7 +97,7 @@ export function Faq() {
     <section className={s.section} id="faq">
       <div className={s.wrap}>
         <SectionHead
-          index="09"
+          index="10"
           label="שאלות ותשובות"
           split
           title={<>מה שחשוב לדעת לפני שמחליטים.</>}

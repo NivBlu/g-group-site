@@ -3,12 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "G-Group — df land units at מע\"ר בן צבי, Tel Aviv. Landing page.",
+  "description": "G-Group — land units at מע\"ר בן צבי, Tel Aviv. Landing page.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:artifact": "vite build --config vite.config.artifact.ts",
+    "build:preview": "npm run build:artifact && node scripts/bundle.mjs"
   },
   "dependencies": {
     "motion": "^13.1.0",

@@ -9,6 +9,7 @@
 import aerialSiteSrc from './aerial-site.jpg'
 import gindiCompareSrc from './gindi-compare.jpg'
 import heroRenderSrc from './hero-render.jpg'
+import hiTowerSrc from './hi-tower.jpg'
 import hubLayersSrc from './hub-layers.jpg'
 import hubRenderSrc from './hub-render.jpg'
 import locationMapSrc from './location-map.jpg'
@@ -25,3 +26,4 @@ export const hubLayers: Img = { src: hubLayersSrc, width: 1400, height: 1097 }
 export const transportNetwork: Img = { src: transportNetworkSrc, width: 2200, height: 1081 }
 export const plan5500: Img = { src: plan5500Src, width: 2200, height: 863 }
 export const gindiCompare: Img = { src: gindiCompareSrc, width: 1700, height: 977 }
+export const hiTower: Img = { src: hiTowerSrc, width: 841, height: 1100 }

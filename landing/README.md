@@ -9,7 +9,13 @@ npm install
 npm run dev        # local dev server
 npm run typecheck  # tsc --noEmit
 npm run build      # typecheck + build into ../downtown/
+npm run build:preview  # single self-contained HTML for preview hosting
 ```
+
+`build:preview` produces one HTML file with the JS, CSS, images and fonts all
+inlined — for hosts that serve a single document under a CSP that blocks
+external requests. It needs a `fonts-inline.css` of base64 `@font-face` rules;
+`scripts/bundle.mjs` takes its path as the first argument.
 
 `npm run build` empties and rewrites `../downtown/` — commit that output alongside
 the source, since the site is served as static files with no CI build step.

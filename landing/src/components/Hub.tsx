@@ -17,7 +17,7 @@ export function Hub() {
     <section className={s.section}>
       <div className={s.wrap}>
         <SectionHead
-          index="04b"
+          index="05"
           label="מרכז תחבורה משולב"
           onDark
           split

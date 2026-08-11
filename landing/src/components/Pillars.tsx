@@ -35,7 +35,7 @@ export function Pillars() {
     <section className={s.section}>
       <div className={s.wrap}>
         <SectionHead
-          index="03"
+          index="02"
           label="מה מקבלים"
           title={<>ארבע סיבות שהופכות את המתחם הזה לחריג.</>}
         />

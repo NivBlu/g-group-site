@@ -6,12 +6,12 @@ import s from './Nav.module.css'
 
 export const NAV_ITEMS = [
   { href: '#value', label: 'היתרון', no: '01' },
-  { href: '#calc', label: 'מחשבון', no: '02' },
-  { href: '#location', label: 'המיקום', no: '03' },
-  { href: '#planning', label: 'סטטוס תכנוני', no: '05' },
-  { href: '#compare', label: 'השוואה', no: '06' },
-  { href: '#trust', label: 'הביטחונות', no: '07' },
-  { href: '#faq', label: 'שאלות', no: '08' },
+  { href: '#calc', label: 'מחשבון', no: '03' },
+  { href: '#location', label: 'המיקום', no: '04' },
+  { href: '#planning', label: 'סטטוס תכנוני', no: '06' },
+  { href: '#compare', label: 'השוואה', no: '07' },
+  { href: '#trust', label: 'הביטחונות', no: '08' },
+  { href: '#faq', label: 'שאלות', no: '10' },
 ] as const
 
 export function Nav() {

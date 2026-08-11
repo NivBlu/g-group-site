@@ -54,9 +54,3 @@ export const derived = {
     return DEAL.pricePerUnit / this.residentialPerUnit
   },
 }
-
-/**
- * נכס מהאתר הראשי (לא מנוהל על ידי הבאנדלר).
- * העמוד מוגש מ-/downtown/, ולכן נתיב יחסי אחד למעלה מגיע לשורש האתר.
- */
-export const siteAsset = (path: string) => `../${path}`

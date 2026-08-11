@@ -1,4 +1,4 @@
-import { siteAsset } from '../config'
+import { hiTower } from '../assets'
 import { Reveal } from './ui/Reveal'
 import { SectionHead } from './ui/SectionHead'
 import s from './Trust.module.css'
@@ -40,7 +40,7 @@ export function Trust() {
     <section className={s.section} id="trust">
       <div className={s.wrap}>
         <SectionHead
-          index="07"
+          index="08"
           label="הביטחונות"
           split
           title={<>איך העסקה בנויה — ומה מגן עליכם.</>}
@@ -64,7 +64,9 @@ export function Trust() {
         <Reveal className={s.band}>
           <figure className={s.portrait}>
             <img
-              src={siteAsset('images/projects/hi-tower-main.png')}
+              src={hiTower.src}
+              width={hiTower.width}
+              height={hiTower.height}
               alt="מגדל היי טאוור בגבעתיים — מפרויקטי G-Group"
               loading="lazy"
               decoding="async"

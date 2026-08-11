@@ -24,7 +24,7 @@ export function Pricing() {
     <section className={s.section}>
       <div className={s.wrap}>
         <SectionHead
-          index="08"
+          index="09"
           label="יחידת קרקע · מע״ר בן צבי"
           onDark
           title={<>מחיר אחד, שקוף, ליחידה.</>}

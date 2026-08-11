@@ -36,7 +36,7 @@ export function Calculator() {
     <section className={s.section} id="calc">
       <div className={s.wrap}>
         <SectionHead
-          index="02"
+          index="03"
           label="מחשבון"
           split
           title={<>כמה זכויות אתם קונים ב־690,000 ₪?</>}

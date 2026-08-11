@@ -32,7 +32,7 @@ export function Compare() {
     <section className={s.section} id="compare">
       <div className={s.wrap}>
         <SectionHead
-          index="06"
+          index="07"
           label="פרופורציה"
           split
           title={<>כדי להבין מה זה רח״ק&nbsp;14 — צריך משהו להשוות אליו.</>}
