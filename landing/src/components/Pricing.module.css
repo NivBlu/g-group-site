@@ -1,0 +1,135 @@
+.section {
+  padding-block: clamp(72px, 11vw, 152px);
+  background: var(--forest-deep);
+  color: var(--paper);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 5vw, 80px);
+  align-items: start;
+  padding-block-start: clamp(28px, 4vw, 46px);
+  border-block-start: 1px solid var(--rule-on-dark);
+}
+
+.label {
+  font-family: var(--accent-face);
+  font-size: 0.84rem;
+  letter-spacing: 0.24em;
+  color: var(--brass-2);
+  margin-block-end: 18px;
+}
+
+.price {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.14em;
+  direction: ltr;
+  justify-content: flex-end;
+  font-family: var(--serif);
+  line-height: 0.84;
+}
+
+.amount {
+  font-size: clamp(3.4rem, 10vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.048em;
+  color: var(--brass-3);
+}
+
+.currency {
+  font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+  font-weight: 500;
+  color: var(--brass-2);
+  margin-block-start: 0.16em;
+}
+
+.sub {
+  margin-block-start: 18px;
+  font-size: 0.88rem;
+  color: rgba(242, 238, 230, 0.55);
+  text-align: end;
+}
+
+.list {
+  margin-block-end: clamp(26px, 3.4vw, 38px);
+}
+
+.list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 13px;
+  padding-block: 12px;
+  border-block-end: 1px solid var(--rule-on-dark-soft);
+  font-size: 0.91rem;
+  line-height: 1.6;
+  color: rgba(242, 238, 230, 0.68);
+}
+
+.bullet {
+  width: 5px;
+  height: 5px;
+  margin-block-start: 0.6em;
+  background: var(--brass-2);
+  transform: rotate(45deg);
+}
+
+.avail {
+  margin-block-end: clamp(24px, 3vw, 34px);
+}
+
+.availHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-block-end: 11px;
+  font-size: 0.8rem;
+  color: rgba(242, 238, 230, 0.5);
+}
+
+.availHead b {
+  font-family: var(--accent-face);
+  font-size: 0.92rem;
+  letter-spacing: 0.14em;
+  color: var(--brass-3);
+  font-weight: 400;
+}
+
+.availTrack {
+  height: 2px;
+  background: var(--rule-on-dark);
+  overflow: hidden;
+}
+
+.availFill {
+  display: block;
+  height: 100%;
+  background: var(--brass-3);
+  transform-origin: right center;
+}
+
+.fine {
+  margin-block-start: 16px;
+  font-size: 0.77rem;
+  color: rgba(242, 238, 230, 0.42);
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+  .price,
+  .sub {
+    justify-content: flex-start;
+    text-align: start;
+  }
+}

@@ -1,0 +1,50 @@
+/* ============================================================
+   Design tokens — editorial / architectural
+   Paper stock, ink, forest green, brass. Hairlines, not cards.
+   ============================================================ */
+:root {
+  /* --- paper --- */
+  --paper: #f2eee6;
+  --paper-2: #eae5da;
+  --paper-3: #e2dccd;
+
+  /* --- ink --- */
+  --ink: #14170f;
+  --ink-2: #3a4036;
+  --ink-3: #6b7266;
+  --ink-4: #979d91;
+
+  /* --- brand --- */
+  --forest: #0e3a26;
+  --forest-2: #175338;
+  --forest-deep: #071c13;
+
+  /* --- brass, used sparingly --- */
+  --brass: #8a6a22;
+  --brass-2: #b4903c;
+  --brass-3: #d8c48a;
+
+  /* --- dark plates --- */
+  --plate: #0b0f0c;
+  --plate-2: #121711;
+
+  /* --- rules --- */
+  --rule: rgba(20, 23, 15, 0.16);
+  --rule-soft: rgba(20, 23, 15, 0.09);
+  --rule-on-dark: rgba(242, 238, 230, 0.2);
+  --rule-on-dark-soft: rgba(242, 238, 230, 0.11);
+
+  /* --- type --- */
+  --serif: 'Frank Ruhl Libre', 'Times New Roman', Georgia, serif;
+  --sans: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --accent-face: 'Bellefair', 'Frank Ruhl Libre', Georgia, serif;
+
+  /* --- measure --- */
+  --gutter: clamp(20px, 4.4vw, 68px);
+  --maxw: 1320px;
+  --col-gap: clamp(16px, 2.2vw, 34px);
+
+  /* --- motion --- */
+  --ease: cubic-bezier(0.22, 0.9, 0.28, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
