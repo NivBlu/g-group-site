@@ -1,0 +1,115 @@
+.section {
+  padding-block: clamp(72px, 11vw, 152px);
+  background: var(--paper-2);
+  border-block: 1px solid var(--rule-soft);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: clamp(28px, 4.5vw, 76px);
+  align-items: center;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(26px, 3.4vw, 44px);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.name {
+  font-family: var(--serif);
+  font-size: clamp(1.04rem, 1.6vw, 1.3rem);
+  font-weight: 700;
+}
+
+.detail {
+  font-size: 0.79rem;
+  color: var(--ink-4);
+}
+
+/* the measured bar */
+.track {
+  position: relative;
+  height: 46px;
+  border-block-end: 1px solid var(--ink);
+}
+
+.fill {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  background: var(--ink-4);
+  transform-origin: right center;
+}
+
+.hero .fill {
+  background: var(--forest);
+}
+
+.figure {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 12px;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.1vw, 1.6rem);
+  font-weight: 800;
+  color: var(--paper);
+}
+
+/* tick scale under the bars */
+.scale {
+  position: relative;
+  height: 22px;
+  margin-block-start: -12px;
+}
+
+.tick {
+  position: absolute;
+  inset-block-start: 0;
+  width: 1px;
+  height: 6px;
+  background: var(--rule);
+}
+
+.tickLabel {
+  position: absolute;
+  inset-block-start: 9px;
+  transform: translateX(50%);
+  font-size: 0.68rem;
+  color: var(--ink-4);
+}
+
+.legend {
+  font-family: var(--accent-face);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}

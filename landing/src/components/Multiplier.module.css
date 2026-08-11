@@ -1,0 +1,189 @@
+.section {
+  padding-block: clamp(72px, 11vw, 152px);
+  background: var(--paper);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- the drawing ---------- */
+.plate {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(24px, 5vw, 80px);
+  align-items: end;
+  padding-block: clamp(30px, 4vw, 56px);
+  border-block: 1px solid var(--rule);
+  margin-block-end: clamp(46px, 7vw, 96px);
+}
+
+.drawing {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  overflow: visible;
+  /* The drawing has its own coordinate space. Left-to-right keeps
+     text-anchor meaning what it says; the Hebrew runs still shape RTL. */
+  direction: ltr;
+}
+
+/* stroke styling lives here so the SVG markup stays clean */
+.hair {
+  stroke: var(--ink);
+  stroke-width: 0.6;
+  fill: none;
+}
+.hairSoft {
+  stroke: var(--ink);
+  stroke-width: 0.5;
+  opacity: 0.34;
+  fill: none;
+}
+.slab {
+  fill: var(--forest);
+}
+.slabTop {
+  fill: var(--brass-2);
+}
+.ground {
+  fill: var(--brass-3);
+  opacity: 0.34;
+}
+.dim {
+  stroke: var(--brass);
+  stroke-width: 0.6;
+  fill: none;
+}
+.label {
+  font-family: var(--accent-face);
+  font-size: 7px;
+  letter-spacing: 0.16em;
+  fill: var(--ink-3);
+}
+.labelStrong {
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+.labelBrass {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--brass);
+}
+
+.readout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.4vw, 30px);
+  padding-block-end: 8px;
+  min-width: 0;
+}
+
+.ratio {
+  font-family: var(--serif);
+  font-size: clamp(3.6rem, 11vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+  color: var(--forest);
+}
+
+.ratioNote {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+  max-width: 30ch;
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: 14px;
+}
+
+/* ---------- the four steps ---------- */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-block-start: 1px solid var(--rule);
+}
+
+.step {
+  padding: clamp(24px, 2.6vw, 36px) clamp(14px, 1.8vw, 28px) 0;
+  border-inline-start: 1px solid var(--rule-soft);
+}
+.step:first-child {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+
+.stepNo {
+  display: block;
+  font-family: var(--accent-face);
+  font-size: 0.8rem;
+  letter-spacing: 0.24em;
+  color: var(--brass);
+  margin-block-end: 14px;
+}
+
+.stepTitle {
+  font-size: clamp(1.08rem, 1.6vw, 1.36rem);
+  font-weight: 700;
+  margin-block-end: 10px;
+}
+
+.stepBody {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-3);
+}
+
+.stepBody strong {
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.final .stepTitle {
+  color: var(--forest);
+}
+
+@media (max-width: 900px) {
+  .plate {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 30px;
+  }
+  .drawing {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+  .flow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .step {
+    padding-block-start: 24px;
+  }
+  .step:nth-child(odd) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+  .step:nth-child(n + 3) {
+    border-block-start: 1px solid var(--rule-soft);
+    margin-block-start: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .flow {
+    grid-template-columns: 1fr;
+  }
+  .step {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+  .step:nth-child(n + 2) {
+    border-block-start: 1px solid var(--rule-soft);
+    margin-block-start: 22px;
+  }
+}

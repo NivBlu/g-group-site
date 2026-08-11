@@ -1,0 +1,165 @@
+.section {
+  padding-block: clamp(72px, 11vw, 152px);
+  background: var(--paper);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block-start: 1px solid var(--rule);
+  margin-block-end: clamp(46px, 6.5vw, 96px);
+}
+
+.card {
+  padding: clamp(24px, 2.8vw, 38px) clamp(16px, 2.2vw, 32px);
+  border-inline-start: 1px solid var(--rule-soft);
+  border-block-end: 1px solid var(--rule-soft);
+}
+
+.card:nth-child(3n + 1) {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+.card:nth-child(3n) {
+  padding-inline-end: 0;
+}
+
+.cardTitle {
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin-block-end: 12px;
+}
+
+.cardBody {
+  font-size: 0.89rem;
+  line-height: 1.75;
+  color: var(--ink-3);
+}
+
+.cardBody b {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ---------- the marketer band ---------- */
+.band {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(24px, 4vw, 68px);
+  align-items: center;
+  padding-block-start: clamp(30px, 4vw, 52px);
+  border-block-start: 1px solid var(--rule);
+}
+
+.portrait {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--rule-soft);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 24%;
+  filter: saturate(0.82) contrast(1.02);
+}
+
+.bandLabel {
+  font-family: var(--accent-face);
+  font-size: 0.84rem;
+  letter-spacing: 0.24em;
+  color: var(--brass);
+  margin-block-end: 14px;
+}
+
+.bandTitle {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  letter-spacing: 0.02em;
+  margin-block-end: 18px;
+}
+
+.bandBody {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--ink-2);
+  max-width: 56ch;
+}
+
+.bandBody + .bandBody {
+  margin-block-start: 14px;
+}
+
+.bandBody b {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.quote {
+  margin: clamp(22px, 3vw, 32px) 0 0;
+  padding-inline-start: 20px;
+  border-inline-start: 2px solid var(--brass-2);
+  font-family: var(--serif);
+  font-size: clamp(1.06rem, 1.7vw, 1.36rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--forest);
+}
+
+.bandLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-block-start: 24px;
+  padding-block-end: 4px;
+  border-block-end: 1px solid var(--rule);
+  font-size: 0.9rem;
+  transition: border-color 0.4s var(--ease);
+}
+
+.bandLink:hover {
+  border-block-end-color: var(--ink);
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card:nth-child(3n + 1),
+  .card:nth-child(3n) {
+    border-inline-start: 1px solid var(--rule-soft);
+    padding-inline: clamp(16px, 2.2vw, 32px);
+  }
+  .card:nth-child(2n + 1) {
+    border-inline-start: 0;
+    padding-inline-start: 0;
+  }
+  .card:nth-child(2n) {
+    padding-inline-end: 0;
+  }
+  .band {
+    grid-template-columns: 1fr;
+  }
+  .portrait {
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card,
+  .card:nth-child(2n) {
+    border-inline-start: 0;
+    padding-inline: 0;
+  }
+}

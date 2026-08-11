@@ -1,0 +1,119 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  padding: 1.02em 1.9em;
+  border: 1px solid transparent;
+  border-radius: 0; /* squared — print, not app chrome */
+  cursor: pointer;
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color 0.5s var(--ease),
+    border-color 0.5s var(--ease),
+    background-color 0.5s var(--ease);
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.55s var(--ease-out);
+}
+
+.btn:hover::after {
+  transform: scaleY(1);
+}
+
+.arrow {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.btn:hover .arrow {
+  transform: translateX(-5px);
+}
+
+/* --- solid: forest ink --- */
+.solid {
+  background: var(--forest);
+  color: var(--paper);
+  border-color: var(--forest);
+}
+.solid::after {
+  background: var(--ink);
+}
+.solid:hover {
+  border-color: var(--ink);
+}
+
+/* --- outline on paper --- */
+.outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--rule);
+}
+.outline::after {
+  background: var(--ink);
+}
+.outline:hover {
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* --- on dark plates --- */
+.onDark {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--rule-on-dark);
+}
+.onDark::after {
+  background: var(--paper);
+}
+.onDark:hover {
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+/* --- brass: the single loudest control on the page --- */
+.brass {
+  background: var(--brass-3);
+  color: var(--forest-deep);
+  border-color: var(--brass-3);
+}
+.brass::after {
+  background: var(--paper);
+}
+.brass:hover {
+  border-color: var(--paper);
+}
+
+.lg {
+  padding: 1.18em 2.3em;
+  font-size: 1rem;
+}
+.sm {
+  padding: 0.72em 1.35em;
+  font-size: 0.85rem;
+}
+.block {
+  display: flex;
+  width: 100%;
+}

@@ -1,0 +1,50 @@
+.figure {
+  margin: 0;
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-3);
+  border: 1px solid var(--rule-soft);
+}
+
+.frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  padding-block-start: 12px;
+  font-size: 0.79rem;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+.no {
+  font-family: var(--accent-face);
+  letter-spacing: 0.18em;
+  color: var(--brass);
+  flex-shrink: 0;
+}
+
+.onDark .frame {
+  background: var(--plate-2);
+  border-color: var(--rule-on-dark-soft);
+}
+.onDark .caption {
+  color: rgba(242, 238, 230, 0.5);
+}
+.onDark .no {
+  color: var(--brass-2);
+}
+
+/* muted treatment for plan drawings and maps */
+.muted img {
+  filter: saturate(0.9) contrast(0.97);
+}
