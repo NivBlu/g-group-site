@@ -18,12 +18,12 @@ import transportNetworkSrc from './transport-2026-2037.jpg'
 
 export type Img = { src: string; width: number; height: number }
 
-export const heroRender: Img = { src: heroRenderSrc, width: 2600, height: 1111 }
-export const aerialSite: Img = { src: aerialSiteSrc, width: 1900, height: 1115 }
-export const locationMap: Img = { src: locationMapSrc, width: 1449, height: 1155 }
-export const hubRender: Img = { src: hubRenderSrc, width: 1248, height: 890 }
-export const hubLayers: Img = { src: hubLayersSrc, width: 1400, height: 1097 }
-export const transportNetwork: Img = { src: transportNetworkSrc, width: 2200, height: 1081 }
-export const plan5500: Img = { src: plan5500Src, width: 2200, height: 863 }
-export const gindiCompare: Img = { src: gindiCompareSrc, width: 1700, height: 977 }
-export const hiTower: Img = { src: hiTowerSrc, width: 841, height: 1100 }
+export const heroRender: Img = { src: heroRenderSrc, width: 2000, height: 855 }
+export const aerialSite: Img = { src: aerialSiteSrc, width: 1600, height: 939 }
+export const locationMap: Img = { src: locationMapSrc, width: 1100, height: 877 }
+export const hubRender: Img = { src: hubRenderSrc, width: 1200, height: 856 }
+export const hubLayers: Img = { src: hubLayersSrc, width: 900, height: 705 }
+export const transportNetwork: Img = { src: transportNetworkSrc, width: 1600, height: 786 }
+export const plan5500: Img = { src: plan5500Src, width: 1600, height: 628 }
+export const gindiCompare: Img = { src: gindiCompareSrc, width: 1100, height: 632 }
+export const hiTower: Img = { src: hiTowerSrc, width: 800, height: 1046 }
