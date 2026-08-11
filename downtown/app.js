@@ -1,5 +1,5 @@
 /* =========================================================
-   DOWN TOWN TLV — interactions
+   G-Group — מע"ר בן צבי — interactions
    ========================================================= */
 (function () {
   'use strict';
@@ -18,7 +18,7 @@
     formEndpoint: '',
 
     // פרמטרי העסקה — משמשים את המחשבון ואת כרטיס המחיר
-    pricePerUnit: 960000,   // ₪ ליחידה
+    pricePerUnit: 690000,   // ₪ ליחידה
     landPerUnit: 16,        // מ"ר קרקע ליחידה
     far: 14,                // רח"ק — מכפיל זכויות הבנייה
     residentialShare: 0.5,  // מרכיב המגורים מתוך שטחי הבנייה
@@ -244,7 +244,7 @@
      ===================================================== */
   function waMessage() {
     var n = units ? parseInt(units.value, 10) : 1;
-    var txt = 'היי, הגעתי מהאתר של DOWN TOWN TLV (מע"ר בן צבי).\n' +
+    var txt = 'היי, הגעתי מהאתר של G-Group — מע"ר בן צבי.\n' +
       'מעניין אותי מידע על יחידות קרקע' + (n > 1 ? ' (' + n + ' יחידות)' : '') + '.\n' +
       'אשמח לקבל את המצגת המלאה ואת מסמכי העסקה.';
     return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(txt);
@@ -333,7 +333,7 @@
         email: $('#fMail').value.trim(),
         units: $('#fUnits').value,
         note: $('#fNote').value.trim(),
-        source: 'DOWN TOWN TLV — landing',
+        source: 'G-Group — מע"ר בן צבי landing',
         page: location.href
       };
 
@@ -367,7 +367,7 @@
     function buildWa(d) {
       var unitsLabel = d.units === '0' ? 'עוד לא החלטתי' : d.units + ' יחידות';
       var lines = [
-        'פנייה מהאתר — DOWN TOWN TLV (מע"ר בן צבי)',
+        'פנייה מהאתר — G-Group · מע"ר בן צבי',
         'שם: ' + d.name,
         'טלפון: ' + d.phone
       ];

@@ -1,5 +1,5 @@
 /* =========================================================
-   DOWN TOWN TLV — מע"ר בן צבי
+   G-Group — מע"ר בן צבי, תל אביב
    Landing page stylesheet
    ========================================================= */
 
@@ -531,7 +531,7 @@ input[type=range]::-moz-range-thumb{
    TRUST
    ========================================================= */
 .trust{background:var(--ink)}
-.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;margin-block-end:clamp(28px,4vh,50px)}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;margin-block-end:clamp(28px,4vh,50px)}
 .tcard{background:var(--ink-2);padding:clamp(24px,2.8vw,34px);transition:background .5s var(--ease)}
 .tcard:hover{background:var(--ink-3)}
 .tcard h3{font-size:1.12rem;margin-block-end:11px;color:var(--gold-2)}
@@ -539,10 +539,12 @@ input[type=range]::-moz-range-thumb{
 .tcard p b{color:var(--paper);font-weight:500}
 
 .team-band{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(20px,3vw,44px);align-items:center;padding:clamp(24px,3vw,44px);border:1px solid var(--line-2);border-radius:var(--r-xl);background:radial-gradient(ellipse 80% 120% at 100% 0%,rgba(15,92,63,.26),transparent 60%),var(--glass)}
-.team-band figure{margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line-2)}
+.team-band figure{margin:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line-2);aspect-ratio:1/1;max-height:520px}
+.team-band figure img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .team-txt h3{font-size:clamp(1.4rem,2.4vw,2rem);margin-block-end:14px}
 .team-txt p{font-size:.95rem;color:var(--muted);line-height:1.8}
 .team-txt p b{color:var(--paper);font-weight:500}
+.team-link{margin-block-start:22px}
 .team-txt blockquote{
   margin:22px 0 0;padding-inline-start:20px;border-inline-start:2px solid var(--gold);
   font-family:var(--serif);font-size:clamp(1.02rem,1.6vw,1.28rem);font-style:italic;color:var(--gold-3);line-height:1.6;
@@ -698,6 +700,7 @@ input[type=range]::-moz-range-thumb{
 .disclaimer h4{font-size:.86rem;letter-spacing:.16em;color:var(--muted);margin-block-end:14px;font-family:var(--sans);font-weight:500}
 .disclaimer p{font-size:.79rem;color:var(--muted-2);line-height:1.8;margin-block-end:12px;max-width:96ch}
 .disclaimer p:last-child{margin-block-end:0}
+.disclaimer .fineprint{font-size:.71rem;opacity:.62;line-height:1.7}
 .disclaimer strong{color:var(--muted);font-weight:500}
 .foot-bottom{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;padding-block-start:24px;font-size:.76rem;color:var(--muted-2)}
 
@@ -737,7 +740,8 @@ input[type=range]::-moz-range-thumb{
   .flow{grid-template-columns:repeat(2,1fr)}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .hub-stats{grid-template-columns:repeat(2,1fr)}
-  .team-band figure{max-width:460px}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .team-band figure{max-width:460px;aspect-ratio:4/3}
 }
 @media(max-width:640px){
   html{scroll-padding-top:76px}
@@ -749,6 +753,7 @@ input[type=range]::-moz-range-thumb{
   .mult-arrow{flex-direction:row;padding-block-end:0;width:100%;max-width:230px}
   .ma-line{width:auto;height:1px;flex:1;min-height:0;background:linear-gradient(90deg,var(--line),var(--gold))}
   .flow{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr}
   .co-grid{grid-template-columns:1fr}
   .timeline{padding-inline-start:26px}
   .tl-dot{inset-inline-start:-26px}
