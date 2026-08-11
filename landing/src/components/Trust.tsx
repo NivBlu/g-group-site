@@ -1,4 +1,5 @@
 import { hiTower } from '../assets'
+import { CONTACT } from '../config'
 import { Reveal } from './ui/Reveal'
 import { SectionHead } from './ui/SectionHead'
 import s from './Trust.module.css'
@@ -88,7 +89,12 @@ export function Trust() {
             <blockquote className={s.quote}>
               הערך האמיתי בנדל״ן הוא לא במה שכבר קרה, אלא במה שעומד לקרות.
             </blockquote>
-            <a className={s.bandLink} href="../about.html">
+            <a
+              className={s.bandLink}
+              href={CONTACT.site}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               לאתר הקבוצה
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
                 <path d="M14 5l-7 7 7 7" />

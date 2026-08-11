@@ -13,6 +13,8 @@ export const CONTACT = {
    * כל עוד הערך ריק — הטופס נפתח בוואטסאפ עם הפרטים מוכנים לשליחה.
    */
   formEndpoint: '',
+  /** אתר הקבוצה */
+  site: 'https://g-group.estate',
 } as const
 
 export const DEAL = {
