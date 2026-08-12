@@ -1,6 +1,5 @@
 import { Calculator } from './components/Calculator'
 import { Compare } from './components/Compare'
-import { Faq } from './components/Faq'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Hub } from './components/Hub'
@@ -35,7 +34,6 @@ export default function App() {
         <Compare />
         <Trust />
         <Pricing />
-        <Faq />
         <LeadForm />
       </main>
 

@@ -11,7 +11,6 @@ export const NAV_ITEMS = [
   { href: '#planning', label: 'סטטוס תכנוני', no: '06' },
   { href: '#compare', label: 'השוואה', no: '07' },
   { href: '#trust', label: 'הביטחונות', no: '08' },
-  { href: '#faq', label: 'שאלות', no: '10' },
 ] as const
 
 export function Nav() {

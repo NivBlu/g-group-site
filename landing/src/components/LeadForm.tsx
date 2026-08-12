@@ -80,7 +80,7 @@ export function LeadForm() {
     <section className={s.section} id="lead">
       <div className={s.wrap}>
         <SectionHead
-          index="11"
+          index="10"
           label="צרו קשר"
           onDark
           title={<>נשלח לכם את כל החומר — ותחליטו בעצמכם.</>}
